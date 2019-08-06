@@ -1,0 +1,26 @@
+service sshd start  开启ssh服务
+sudo systemctl restart sshd.service 重启ssh服务
+/usr/sbin/sestatus -v 查看SELinux是否关闭
+netstat -antp | grep sshd 查看已启用端口
+ssh -p 52320 test@192.168.xx.xx 使用新的端口尝试登入
+setenforce 1     临时开启SELinux
+
+firewall-cmd --state 检查防火墙是否启动
+systemctl start firewalld 开启防火墙
+sudo firewall-cmd --permanent --zone=public --add-port=52320/tcp 新端口在防火墙启用
+sudo firewall-cmd --reload 重启防火墙
+
+ssh-keygen  -t  rsa  给新建用户ssh权限问题
+ll -a ~/.ssh 查看.ssh文件下内容
+passwd XXXXXX 修改用户密码
+free -m 查看内存使用情况
+df -h ：看硬盘占用率
+useradd -s /bin/sh -g group -G adm,root gem
+此命令新建了一个用户gem，该用户的登录Shell是 /bin/sh，它属于group用户组，同时又属于adm和root用户组，其中group用户组是其主组。
+rpm -qa|grep -i mysql检查是否安装过mysql
+查看组和用户情况：cat /etc/group | grep mysql
+查看组和用户情况：cat /etc/passwd |grep mysql
+删除原mysql用户：userdel -r mysql
+netstat -ln | grep 3306 查看3306端口是否开启
+startup.sh  找到此文件所在目录 输入./startup.sh启动Tomcat
+ ps -ef|grep tomcat确认tomcat是否启动
