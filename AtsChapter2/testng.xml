@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="RegressionSuite" parallel="tests" thread-count="2">
+    <listeners>
+        <listener class-name="com.ats.qzj.atschapter2.config.ExtentReport" />
+    </listeners>
+
+    <test name="AtsChapter2 Tests">
+        <classes>
+            <class name="com.ats.qzj.atschapter2.testcase.AtsTestCase">
+                <methods>
+                    <include name="testCheckout"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
