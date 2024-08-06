@@ -84,7 +84,7 @@ public class Atsouttest extends AbstractTestNGSpringContextTests {
     public void testCheckout(String dizhi, String fields) throws IOException {
         //声明okhttpclient对象
         client = new OkHttpClient().newBuilder()
-                .connectTimeout(30, TimeUnit.SECONDS) // 连接超时设置
+                .connectTimeout(20, TimeUnit.SECONDS) // 连接超时设置
                 .readTimeout(30, TimeUnit.SECONDS)    // 读取超时设置
                 .writeTimeout(30, TimeUnit.SECONDS)// 写入超时设置;
                 .build();
