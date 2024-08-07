@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 class AtsChapter2ApplicationTests {
 	@Test
 	public void test3(){
-		Assert.assertEquals(1,1);
+		Assert.assertEquals(2,2);
 	}
 
 }
