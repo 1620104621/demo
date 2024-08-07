@@ -10,5 +10,5 @@ import java.util.List;
 @Mapper
 //@Repository
 public interface DatabaseUtils {
-    List<SettleEntity> findCardDetailsByIds(@Param("id") Long id);
+    List<SettleEntity> findCardDetailsByIds( @Param("id") Long id);
 }
