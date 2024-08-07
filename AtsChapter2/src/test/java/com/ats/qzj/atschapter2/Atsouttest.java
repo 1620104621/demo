@@ -78,6 +78,11 @@ public class Atsouttest extends AbstractTestNGSpringContextTests {
 
     }
 
+    @Test
+    public void test3(){
+        Assert.assertEquals(2,3);
+    }
+
     //请求发送并响应
 
     @Test(dataProvider = "datapv")

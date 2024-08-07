@@ -4,14 +4,24 @@
         <listener class-name="com.ats.qzj.atschapter2.config.ExtentReport" />
     </listeners>
 
-    <test name="AtsChapter2 Tests">
+    <test name="AtsChapter2 main">
         <classes>
             <class name="com.ats.qzj.atschapter2.testcase.AtsTestCase">
                 <methods>
-                    <include name="testCheckout"/>
+                    <include name="testCheckout2"/>
                 </methods>
             </class>
         </classes>
     </test>
+
+<!--    <test name="AtsChapter2 test">-->
+<!--        <classes>-->
+<!--            <class name="com.ats.qzj.atschapter2.AtsChapter2ApplicationTests">-->
+<!--                <methods>-->
+<!--                    <include name="test3"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
 
 </suite>

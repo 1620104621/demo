@@ -68,5 +68,10 @@ public class AtsTestCase {
         Assert.assertEquals(expects.get(0), "预期结果");
     }
 
+    @Test
+    public void testCheckout2(){
+        Assert.assertEquals(1,1);
+    }
+
 
 }
