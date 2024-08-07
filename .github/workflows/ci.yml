@@ -3,10 +3,10 @@ name: Java CI with Maven
 on:
   push:
     branches:
-      - demo  # 触发 CI 的分支，可以根据需要调整
+      - master  # 触发 CI 的分支，可以根据需要调整
   pull_request:
     branches:
-      - demo  # 触发 CI 的 PR 可以针对的分支
+      - master  # 触发 CI 的 PR 可以针对的分支
 
 jobs:
   build:
