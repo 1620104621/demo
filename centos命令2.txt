@@ -1,26 +1,26 @@
-service sshd start  ¿ªÆôssh·şÎñ
-sudo systemctl restart sshd.service ÖØÆôssh·şÎñ
-/usr/sbin/sestatus -v ²é¿´SELinuxÊÇ·ñ¹Ø±Õ
-netstat -antp | grep sshd ²é¿´ÒÑÆôÓÃ¶Ë¿Ú
-ssh -p 52320 test@192.168.xx.xx Ê¹ÓÃĞÂµÄ¶Ë¿Ú³¢ÊÔµÇÈë
-setenforce 1     ÁÙÊ±¿ªÆôSELinux
+service sshd start  å¼€å¯sshæœåŠ¡
+sudo systemctl restart sshd.service é‡å¯sshæœåŠ¡
+/usr/sbin/sestatus -v æŸ¥çœ‹SELinuxæ˜¯å¦å…³é—­
+netstat -antp | grep sshd æŸ¥çœ‹å·²å¯ç”¨ç«¯å£
+ssh -p 52320 test@192.168.xx.xx ä½¿ç”¨æ–°çš„ç«¯å£å°è¯•ç™»å…¥
+setenforce 1     ä¸´æ—¶å¼€å¯ SELinux
 
-firewall-cmd --state ¼ì²é·À»ğÇ½ÊÇ·ñÆô¶¯
-systemctl start firewalld ¿ªÆô·À»ğÇ½
-sudo firewall-cmd --permanent --zone=public --add-port=52320/tcp ĞÂ¶Ë¿ÚÔÚ·À»ğÇ½ÆôÓÃ
-sudo firewall-cmd --reload ÖØÆô·À»ğÇ½
+firewall-cmd --state æ£€æŸ¥é˜²ç«å¢™æ˜¯å¦å¯åŠ¨
+systemctl start firewalld å¼€å¯é˜²ç«å¢™
+sudo firewall-cmd --permanent --zone=public --add-port=52320/tcp æ–°ç«¯å£åœ¨é˜²ç«å¢™å¯ç”¨
+sudo firewall-cmd --reload é‡å¯é˜²ç«å¢™
 
-ssh-keygen  -t  rsa  ¸øĞÂ½¨ÓÃ»§sshÈ¨ÏŞÎÊÌâ
-ll -a ~/.ssh ²é¿´.sshÎÄ¼şÏÂÄÚÈİ
-passwd XXXXXX ĞŞ¸ÄÓÃ»§ÃÜÂë
-free -m ²é¿´ÄÚ´æÊ¹ÓÃÇé¿ö
-df -h £º¿´Ó²ÅÌÕ¼ÓÃÂÊ
+ssh-keygen  -t  rsa  ç»™æ–°å»ºç”¨æˆ·sshæƒé™é—®é¢˜
+ll -a ~/.ssh æŸ¥çœ‹.sshæ–‡ä»¶ä¸‹å†…å®¹
+passwd XXXXXX ä¿®æ”¹ç”¨æˆ·å¯†ç 
+free -m æŸ¥çœ‹å†…å­˜ä½¿ç”¨æƒ…å†µ
+df -h ï¼šçœ‹ç¡¬ç›˜å ç”¨ç‡
 useradd -s /bin/sh -g group -G adm,root gem
-´ËÃüÁîĞÂ½¨ÁËÒ»¸öÓÃ»§gem£¬¸ÃÓÃ»§µÄµÇÂ¼ShellÊÇ /bin/sh£¬ËüÊôÓÚgroupÓÃ»§×é£¬Í¬Ê±ÓÖÊôÓÚadmºÍrootÓÃ»§×é£¬ÆäÖĞgroupÓÃ»§×éÊÇÆäÖ÷×é¡£
-rpm -qa|grep -i mysql¼ì²éÊÇ·ñ°²×°¹ımysql
-²é¿´×éºÍÓÃ»§Çé¿ö£ºcat /etc/group | grep mysql
-²é¿´×éºÍÓÃ»§Çé¿ö£ºcat /etc/passwd |grep mysql
-É¾³ıÔ­mysqlÓÃ»§£ºuserdel -r mysql
-netstat -ln | grep 3306 ²é¿´3306¶Ë¿ÚÊÇ·ñ¿ªÆô
-startup.sh  ÕÒµ½´ËÎÄ¼şËùÔÚÄ¿Â¼ ÊäÈë./startup.shÆô¶¯Tomcat
- ps -ef|grep tomcatÈ·ÈÏtomcatÊÇ·ñÆô¶¯
+æ­¤å‘½ä»¤æ–°å»ºäº†ä¸€ä¸ªç”¨æˆ·gemï¼Œè¯¥ç”¨æˆ·çš„ç™»å½•Shellæ˜¯ /bin/shï¼Œå®ƒå±äºgroupç”¨æˆ·ç»„ï¼ŒåŒæ—¶åˆå±äºadmå’Œrootç”¨æˆ·ç»„ï¼Œå…¶ä¸­groupç”¨æˆ·ç»„æ˜¯å…¶ä¸»ç»„ã€‚
+rpm -qa|grep -i mysqlæ£€æŸ¥æ˜¯å¦å®‰è£…è¿‡mysql
+æŸ¥çœ‹ç»„å’Œç”¨æˆ·æƒ…å†µï¼šcat /etc/group | grep mysql
+æŸ¥çœ‹ç»„å’Œç”¨æˆ·æƒ…å†µï¼šcat /etc/passwd |grep mysql
+åˆ é™¤åŸmysqlç”¨æˆ·ï¼šuserdel -r mysql
+netstat -ln | grep 3306 æŸ¥çœ‹3306ç«¯å£æ˜¯å¦å¼€å¯
+startup.sh  æ‰¾åˆ°æ­¤æ–‡ä»¶æ‰€åœ¨ç›®å½• è¾“å…¥./startup.shå¯åŠ¨Tomcat
+ ps -ef|grep tomcatç¡®è®¤tomcatæ˜¯å¦å¯åŠ¨
